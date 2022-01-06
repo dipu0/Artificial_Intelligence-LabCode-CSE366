@@ -1,14 +1,6 @@
 
-<style>
-.center {
-  margin: auto;
-  width: 60%;
-  border: 3px solid #73AD21;
-  padding: 10px;
-}
-</style>
 <br><br>
-<div class="center"style="font-style: bold; text-align: center;">
+<div style="font-style: bold; text-align: center;">
 <img src="https://www.ewubd.edu/themes/east-west-university/assets/default/images/logo.png" alt="ERROR" title="EWULOGO" width=":5.72917in"/><br>Department: Computer Science & Engineering
 <br><br><br>
 </div>
