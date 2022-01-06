@@ -33,8 +33,3 @@
 ## > Date of Submission: 1/1/2022
 <br>
 </div>
-
-
-```python
-
-```
