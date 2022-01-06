@@ -1,5 +1,5 @@
 <div style="font-style: bold; text-align: center;">
-<img src="https://www.ewubd.edu/themes/east-west-university/assets/default/images/logo.png" alt="ERROR" title="EWULOGO" width=":5.72917in"/>Department: Computer Science & Engineering
+<img src="https://www.ewubd.edu/themes/east-west-university/assets/default/images/logo.png" alt="ERROR" title="EWULOGO" width=":5.72917in"/><br>Department: Computer Science & Engineering
 <br><br><br>
 </div>
 
