@@ -1,242 +1,131 @@
-# Float
-
-
-```python
-1/3
-```
-
-
-
-
-    0.3333333333333333
-
+## Loop
 
 
 
 ```python
-print(format(1/3,'0.2f'))
+x_val = [1,2,3]
+for x in x_val: ## Looping without indices
+    print(x)
 ```
 
-    0.33
+    1
+    2
+    3
     
 
 
 ```python
-import math
+for i in range(len(x_val)):## Lopping with indices
+    print(x_val[i])
 ```
+
+    1
+    2
+    3
+    
+
+## Zip()
 
 
 ```python
-print(format(math.pi,'.12f'))
+names =['A','B']
+marks = ['C','D']
+dict(zip(names, marks))
 ```
 
-    3.141592653590
+
+
+
+    {'A': 'C', 'B': 'D'}
+
+
+
+
+```python
+district = ('jashore', 'Kushtia', 'Khulna', 'Pabna', 'Natore')
+toun = ('Rajshahi','Sylhet','Barisal','Dhaka','Chottagone')
+
+for dist,toun in zip(district,toun):
+    print(f'The district {dist} and corresponding city {toun}')
+```
+
+    The district jashore and corresponding city Rajshahi
+    The district Kushtia and corresponding city Sylhet
+    The district Khulna and corresponding city Barisal
+    The district Pabna and corresponding city Dhaka
+    The district Natore and corresponding city Chottagone
     
 
 
 ```python
-print(format(math.pi,'.12g'))
+for index, number in enumerate(x_val):
+    print(f'xa_val [{index}] = {number}')
 ```
 
-    3.14159265359
+    xa_val [0] = 1
+    xa_val [1] = 2
+    xa_val [2] = 3
     
 
+## Function
+
 
 ```python
-2**52<=2**56//10 <2**53
+def f(string):
+    count = 0
+    for letter in string:
+        if letter == letter.upper() and letter.isalpha():
+            count +=1
+    return  count
+f('Winter Is Beautiful But Scary')        
 ```
 
 
 
 
-    True
+    5
 
 
 
 
 ```python
-2**52
+from scipy.integrate import quad
+```
+
+
+```python
+def f(x):
+    return x**3
+f= (lambda x:x**3)(3)
+f
 ```
 
 
 
 
-    4503599627370496
+    27
 
 
-
-# Starings
 
 
 ```python
-season ="winter is coming"
+import numpy as np
 ```
 
 
 ```python
-length = len(season )
+a = np.zeros(10)
 ```
 
 
 ```python
-length 
-```
-
-
-
-
-    16
-
-
-
-
-```python
-last = season[length -3]
-last
-```
-
-
-
-
-    'i'
-
-
-
-
-```python
-middle = season[length  - 8]
-middle
-```
-
-
-
-
-    's'
-
-
-
-# Loop
-
-
-```python
-for char in season:
-    print(char)
-```
-
-    w
-    i
-    n
-    t
-    e
-    r
-     
-    i
-    s
-     
-    c
-    o
-    m
-    i
-    n
-    g
-    
-
-
-```python
-i=0
-while(i < length):
-    print (season [i])
-    i+=1
-```
-
-    w
-    i
-    n
-    t
-    e
-    r
-     
-    i
-    s
-     
-    c
-    o
-    m
-    i
-    n
-    g
-    
-
-
-```python
-s1 = "CSE366 Lab Time"
-for x in s1.split():
-    print (x)
-```
-
-    CSE366
-    Lab
-    Time
-    
-
-# String Slices
-
-
-```python
-print(season [:6])
-print(season [6:])
-```
-
-    winter
-     is coming
-    
-
-
-```python
-counter = 0
-for x in season:
-      counter +=1
-print(counter)
-```
-
-    16
-    
-
-#
-
-
-```python
-new = season.upper()
-new
-```
-
-
-
-
-    'WINTER IS COMING'
-
-
-
-
-```python
-cricket = ' BD beat Aus'
-cricket.strip()
-print(cricket)
-```
-
-     BD beat Aus
-    
-
-
-```python
-a=[12,10,20,30]
 a
 ```
 
 
 
 
-    [12, 10, 20, 30]
+    array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])
 
 
 
@@ -248,417 +137,403 @@ type(a)
 
 
 
-    list
+    numpy.ndarray
 
 
 
 
 ```python
-a[2]='50'
+a.shape=(5,2)
 a
 ```
 
 
 
 
-    [12, 10, '50', 30]
+    array([[0., 0.],
+           [0., 0.],
+           [0., 0.],
+           [0., 0.],
+           [0., 0.]])
 
 
 
 
 ```python
-mixed = ['Rahat', 'Shamim', "Arif",10,20,30]
-mixed
+a = np.linspace(2,4,5)
+a
 ```
 
 
 
 
-    ['Rahat', 'Shamim', 'Arif', 10, 20, 30]
+    array([2. , 2.5, 3. , 3.5, 4. ])
+
+
+
+## matrix
+
+
+```python
+x = np.identity(4)
+x
+```
+
+
+
+
+    array([[1., 0., 0., 0.],
+           [0., 1., 0., 0.],
+           [0., 0., 1., 0.],
+           [0., 0., 0., 1.]])
 
 
 
 
 ```python
-nested = ['Arif','Sagor',[10,20,30],'EWU','AUST','BUET','DU']
-nested
+a = np.array([10,20], dtype = float)
+a
 ```
 
 
 
 
-    ['Arif', 'Sagor', [10, 20, 30], 'EWU', 'AUST', 'BUET', 'DU']
+    array([10., 20.])
 
 
 
 
 ```python
-for i in nested:
-    print(nested)
+z = np.linspace(1,2,5)
+z[0]
 ```
 
-    ['Arif', 'Sagor', [10, 20, 30], 'EWU', 'AUST', 'BUET', 'DU']
-    ['Arif', 'Sagor', [10, 20, 30], 'EWU', 'AUST', 'BUET', 'DU']
-    ['Arif', 'Sagor', [10, 20, 30], 'EWU', 'AUST', 'BUET', 'DU']
-    ['Arif', 'Sagor', [10, 20, 30], 'EWU', 'AUST', 'BUET', 'DU']
-    ['Arif', 'Sagor', [10, 20, 30], 'EWU', 'AUST', 'BUET', 'DU']
-    ['Arif', 'Sagor', [10, 20, 30], 'EWU', 'AUST', 'BUET', 'DU']
-    ['Arif', 'Sagor', [10, 20, 30], 'EWU', 'AUST', 'BUET', 'DU']
+
+
+
+    1.0
+
+
+
+
+```python
+z[-1]
+```
+
+
+
+
+    2.0
+
+
+
+
+```python
+b= np.array([[1,2],[3,4]])
+b
+```
+
+
+
+
+    array([[1, 2],
+           [3, 4]])
+
+
+
+
+```python
+b[0,1]
+```
+
+
+
+
+    2
+
+
+
+
+```python
+b[0,:]
+```
+
+
+
+
+    array([1, 2])
+
+
+
+
+```python
+b[:,1]
+```
+
+
+
+
+    array([2, 4])
+
+
+
+
+```python
+d=np.array ((12,16))
+e= np.array((13,17))
+d@e
+```
+
+
+
+
+    428
+
+
+
+
+```python
+a=np.random.randn(5)
+a
+```
+
+
+
+
+    array([ 0.70799598,  1.17800244,  0.95121211, -1.11469393, -0.98758995])
+
+
+
+
+```python
+b = a
+b[0] = 0.0
+```
+
+
+```python
+b
+```
+
+
+
+
+    array([ 0.        , -0.84906238, -0.45539763, -0.26656456, -1.08647744])
+
+
+
+
+```python
+b = np.copy(a)
+a
+```
+
+
+
+
+    array([-0.94547129,  0.79047984,  0.32832408,  0.40117713, -0.55353804])
+
+
+
+
+```python
+import matplotlib.pyplot as plt
+```
+
+
+```python
+plt.plot(a)
+plt.title('CSE366')
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.show()
+```
+
+
     
-
-# if_else
-
-
-```python
-if case condition:
-    print
-elif condition:
-    action
-else:
-    
-```
-
-
-```python
-if True:
-    print("The mornig was very charming")
-```
-
-    The mornig was very charming
-    
-
-
-```python
-a= False
-if a:
-    print ('a: was true')
-else:
-    print('a: was not true')
-```
-
-    a: was not true
-    
-
-
-```python
-loc = 'Bank'
-if loc == 'Auto shop':
-    print('Welcome to the Auto shop')
-elif loc =='Bank':
-    print('Welcome to the bank')
-else:
-    print('Where are you?')
-```
-
-    Welcome to the bank
-    
-
-
-```python
-x=(1,2)
-type(x)
-```
-
-
-
-
-    tuple
-
-
-
-
-```python
-numbers = (10,20,30)
-x, y, z = numbers
-```
-
-
-```python
-print(x,y,z)
-```
-
-    10 20 30
-    
-
-# Dictionary
-
-
-```python
-dictionary = {'EWU':'Dhaka','RU':'Rajshahi','CU':'Chottogram'}
-dictionary
-```
-
-
-
-
-    {'EWU': 'Dhaka', 'RU': 'Rajshahi', 'CU': 'Chottogram'}
-
-
-
-
-```python
-dictionary['EWU']
-```
-
-
-
-
-    'Dhaka'
-
-
-
-# set
-
-
-```python
-s={'a','b'}
-s1= {'b','c'}
-s.intersection(s1) ## Set unordered  collections. Set does not allow duplicate element.
-```
-
-
-
-
-    {'b'}
-
-
-
-# Exercises
-
-# CSE366 Lab 2 Exercises
-
-## exercise 1
-Write a program in Python to find the root of a quadratice
-equation.
-
-
-```python
-#quadratic equation ax**2 + bx + c = 0
-
-from math import sqrt
-a=3
-b=10
-c=8
-r = b**2 - 4*a*c
-
-#when number of roots 2
-if r > 0:
-    root1 = (((-b) + sqrt(r))/(2*a))     
-    root2 = (((-b) - sqrt(r))/(2*a))
-    print("Number of roots is 2 :","X1: ",root1," X2",root2)
-#when number of roots 1
-elif r == 0:
-    root = (-b) / 2*a
-    print("Root: ", root)
-#when number of roots 0
-else:
-    print("No roots")
-```
-
-    Number of roots is 2 : X1:  -1.3333333333333333  X2 -2.0
-    
-
-## exercise 2
-Write code to perform grade computation
-
-
-```python
-Numerical_Scores= 96
-if (97 <= Numerical_Scores <= 100):
-    print(" You have obtained Grade A+ = 4.00 ")
-elif  (90 <= Numerical_Scores < 97):
-    print(" You have obtained Grade A = 4.00 ")        
-elif  (87 <= Numerical_Scores < 90):
-    print(" You have obtained Grade A- = 3.70 ")         
-elif  (83 <= Numerical_Scores < 87):
-    print(" You have obtained Grade B+ = 3.30 ")          
-elif  (80 <= Numerical_Scores < 83):            
-    print(" You have obtained Grade B = 3.00 ")           
-elif  (77 <= Numerical_Scores < 80):           
-    print(" You have obtained Grade B- = 2.70 ")            
-elif  (73 <= Numerical_Scores < 77):
-    print(" You have obtained Grade C = 2.00 ")           
-elif  (67 <= Numerical_Scores < 70):
-    print(" You have obtained Grade C- = 1.70 ")
-elif (63 <= Numerical_Scores < 67):
-    print(" You have obtained Grade D+ = 1.30 ")
-elif  (60 <= Numerical_Scores < 63):
-    print(" You have obtained Grade D = 1.00 ")
-elif ( 0 <= Numerical_Scores < 60):
-    print(" You have obtained Grade F = 0.00 ")
-else :
-    print('Invalid Numerical Scores')
-
-```
-
-     You have obtained Grade A = 4.00 
-    
-
-## exercise 3
-Given two numeric lists or tuples x_vals and y_vals of equal
-length, compute their inner product uzing zip(). Additionally count
-the number of even number in 0 to 99. Furthermore given pairs =
-((4, 5), (6,7), (8,9)) count the number of pairs (x,y) such that a and b
-are odd.
-
-### part1
-
-
-```python
-x_vals = [0, 9, 3]
-y_vals = [9, 3, 0]
-inner_product=0
-for x, y in zip(x_vals, y_vals):
-    inner_product += x*y
-print(inner_product)
-```
-
-    27
-    
-
-### part2
-
-
-```python
-count =0
-for i in range(0,99):
-    if i%2 == 0:
-        count+=1
-print(count)
-```
-
-    50
-    
-
-### part3
-
-
-```python
-pairs = ((4, 5), (6, 7), (9, 8))
-count =0
-for x, y in pairs:    
-    if (x % 2 != 0 and y % 2 != 0) :
-        count+=1
-        print(x," ",y) #print(x," ",y)
-print(count)
-```
-
-    0
+![png](output_32_0.png)
     
 
 
+
 ```python
-# CSE366 Lab 2 Exercises
-
-## exercise 1
-Write a program in Python to find the root of a quadratice
-equation.
-
-#quadratic equation ax**2 + bx + c = 0
-
-from math import sqrt
-a=3
-b=10
-c=8
-r = b**2 - 4*a*c
-
-#when number of roots 2
-if r > 0:
-    root1 = (((-b) + sqrt(r))/(2*a))     
-    root2 = (((-b) - sqrt(r))/(2*a))
-    print("Number of roots is 2 :","X1: ",root1," X2",root2)
-#when number of roots 1
-elif r == 0:
-    root = (-b) / 2*a
-    print("Root: ", root)
-#when number of roots 0
-else:
-    print("No roots")
-
-## exercise 2
-Write code to perform grade computation
-
-Numerical_Scores= 96
-if (97 <= Numerical_Scores <= 100):
-    print(" You have obtained Grade A+ = 4.00 ")
-elif  (90 <= Numerical_Scores < 97):
-    print(" You have obtained Grade A = 4.00 ")        
-elif  (87 <= Numerical_Scores < 90):
-    print(" You have obtained Grade A- = 3.70 ")         
-elif  (83 <= Numerical_Scores < 87):
-    print(" You have obtained Grade B+ = 3.30 ")          
-elif  (80 <= Numerical_Scores < 83):            
-    print(" You have obtained Grade B = 3.00 ")           
-elif  (77 <= Numerical_Scores < 80):           
-    print(" You have obtained Grade B- = 2.70 ")            
-elif  (73 <= Numerical_Scores < 77):
-    print(" You have obtained Grade C = 2.00 ")           
-elif  (67 <= Numerical_Scores < 70):
-    print(" You have obtained Grade C- = 1.70 ")
-elif (63 <= Numerical_Scores < 67):
-    print(" You have obtained Grade D+ = 1.30 ")
-elif  (60 <= Numerical_Scores < 63):
-    print(" You have obtained Grade D = 1.00 ")
-elif ( 0 <= Numerical_Scores < 60):
-    print(" You have obtained Grade F = 0.00 ")
-else :
-    print('Invalid Numerical Scores')
+x= np.array([1,2,3])
+np.sin(x)
+```
 
 
-## exercise 3
-Given two numeric lists or tuples x_vals and y_vals of equal
-length, compute their inner product uzing zip(). Additionally count
-the number of even number in 0 to 99. Furthermore given pairs =
-((4, 5), (6,7), (8,9)) count the number of pairs (x,y) such that a and b
-are odd.
 
-### part1
 
-x_vals = [0, 9, 3]
-y_vals = [9, 3, 0]
-inner_product=0
-for x, y in zip(x_vals, y_vals):
-    inner_product += x*y
-print(inner_product)
+    array([0.84147098, 0.90929743, 0.14112001])
 
-### part2
 
-count =0
-for i in range(0,99):
-    if i%2 == 0:
-        count+=1
-print(count)
 
-### part3
 
-pairs = ((4, 5), (6, 7), (9, 8))
-count =0
-for x, y in pairs:    
-    if (x % 2 != 0 and y % 2 != 0) :
-        count+=1
-        print(x," ",y) #print(x," ",y)
-print(count)
+```python
+np.sqrt(2*np.pi)
+```
+
+
+
+
+    2.5066282746310002
+
+
+
+
+```python
+def f(x):
+    return 1 if x> 0 else 0
 ```
 
 
 ```python
+f(2)
+```
 
+
+
+
+    1
+
+
+
+
+```python
+np.where (x>0,1,0)
+```
+
+
+
+
+    array([1, 1, 1])
+
+
+
+
+```python
+f = np.vectorize(f)
+f(x)
+```
+
+
+
+
+    array([1, 1, 1])
+
+
+
+# Exercise Lab 3
+
+## 1) Find root of ax^2 + bx + c, consider fixed x value but take multiple values for coeffs. Hints: def f(x, coeff), coeff = (2, 1).
+
+
+```python
+import cmath
 ```
 
 
 ```python
+def foo(x, coeff): #here x is the fixed value and in coeff there are 2 coefficient
+    d = (coeff[1]**2) - (4*coeff[0]*x)
+    root1 = (-coeff[1]-cmath.sqrt(d))/(2*coeff[0])
+    root2 = (-coeff[1]+cmath.sqrt(d))/(2*coeff[0])
+    print('solutions: ',root1,' and ',root2)
 
+coeff = (2,1) #tuple
+x=1
+foo(x,coeff)
 ```
+
+    solutions:  (-0.25-0.6614378277661477j)  and  (-0.25+0.6614378277661477j)
+    
+
+## 2) Write a function in Python which takes two sequences as arguments and returns True if every element in a sequence is also an element of second sequnce, else False.'''
 
 
 ```python
+def c_data(seq1, seq2):
+     result = False
+     for i in seq1:
+        for j in seq2:
+            if (i == j):
+                 return True
+            else:
+                return False
 
+a=[10,20,30,40,50]
+b=[10,20,30,40,60]
+print(c_data(a,b))
+            
 ```
+
+    True
+    
+
+## 3) Plot sin, cosine, and tan function using np library. Use linspace to generate values.
 
 
 ```python
-
+import numpy as np
+import matplotlib.pyplot as plt
 ```
+
+### Sine Graph
+
+
+```python
+x=np.linspace(0,5*np.pi)
+y=np.sin(x)
+plt.plot(x,y)
+plt.title('Graph of Sine')
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+plt.show()
+```
+
+
+    
+![png](output_48_0.png)
+    
+
+
+### Cos Graph
+
+
+```python
+x=np.linspace(0,5*np.pi)
+y=np.cos(x)
+plt.plot(x,y)
+plt.title('Graph of CoSine')
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+plt.show()
+```
+
+
+    
+![png](output_50_0.png)
+    
+
+
+### Tan Graph
+
+
+```python
+x=np.linspace(0,5*np.pi)
+y=np.tan(x)
+plt.plot(x,y)
+plt.title('Graph of Tan')
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+plt.show()
+```
+
+
+    
+![png](output_52_0.png)
+    
+
 
 
 ```python
