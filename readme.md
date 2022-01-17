@@ -26,10 +26,7 @@
 <br><br>
 <br><br>
 <br><br>
-
-## > student ID: 2019-1-60-093
 ## > Student Name: Md. Asad Chowdhury Dipu
 ## > Section: 01
-## > Date of Submission: 1/1/2022
 <br>
 </div>
